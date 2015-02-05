@@ -3,7 +3,8 @@ require 'api_callers/http_request'
 module ApiCallers
   class JsonRequest < HttpRequest
     def format_response(response_body)
-      ActiveSupport::JSON.decode(clean_response_body(response_body))
+      # ActiveSupport::JSON.decode(clean_response_body(response_body))
+      ActiveSupport::JSON.decode(response_body)
     end
 
     private
